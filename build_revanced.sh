@@ -24,6 +24,7 @@ declare -A artifacts
 artifacts["revanced-cli.jar"]="revanced/revanced-cli revanced-cli .jar"
 artifacts["revanced-integrations.apk"]="revanced/revanced-integrations revanced-integrations .apk"
 artifacts["revanced-patches.jar"]="revanced/revanced-patches revanced-patches .jar"
+artifacts["vanced-microG.apk"]="inotia00/VancedMicroG microg .apk"
 artifacts["apkeep"]="EFForg/apkeep apkeep-x86_64-unknown-linux-gnu"
 
 ## Functions
@@ -66,17 +67,6 @@ for artifact in "${!artifacts[@]}"; do
     fi
 done
 
-# Fetch microG
-chmod +x apkeep
-
-if [ ! -f "vanced-microG.apk" ]; then
-    # Vanced microG 0.2.24.220220
-    VMG_VERSION="0.2.24.220220"
-
-    echo "Downloading Vanced microG"
-    ./apkeep -a com.mgoogle.android.gms@$VMG_VERSION .
-    mv com.mgoogle.android.gms@$VMG_VERSION.apk vanced-microG.apk
-fi
 
 # If the variables are NOT empty, call populate_patches with proper arguments
 [[ ! -z "$excluded_patches" ]] && populate_patches "-e" "$excluded_patches"
