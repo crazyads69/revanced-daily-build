@@ -80,7 +80,7 @@ echo "Building YouTube Root APK"
 echo "************************************"
 
 if [ -f "com.google.android.youtube.apk" ]; then
-    java -jar revanced-cli.jar --rip-lib x86_64 --rip-lib x86 -m revanced-integrations.apk -b revanced-patches.jar --mount \
+    java --rip-lib x86_64 --rip-lib x86 -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --mount \
         -e microg-support ${patches[@]} \
         $EXPERIMENTAL \
         -a com.google.android.youtube.apk -o build/revanced-youtube-root.apk
@@ -95,7 +95,7 @@ echo "Building YouTube Non-root APK"
 echo "************************************"
 
 if [ -f "com.google.android.youtube.apk" ]; then
-    java -jar revanced-cli.jar --rip-lib x86_64 --rip-lib x86 -m revanced-integrations.apk -b revanced-patches.jar \
+    java --rip-lib x86_64 --rip-lib x86 -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar \
         ${patches[@]} \
         $EXPERIMENTAL \
         -a com.google.android.youtube.apk -o build/revanced-youtube.apk
@@ -111,7 +111,7 @@ echo "************************************"
 
 if [ -f "com.google.android.apps.youtube.music.apk" ]; then
     echo "Building Root APK"
-    java -jar revanced-cli.jar --rip-lib x86_64 --rip-lib x86 -b revanced-patches.jar --mount \
+    java --rip-lib x86_64 --rip-lib x86 -jar revanced-cli.jar -b revanced-patches.jar --mount \
         -e microg-support ${patches[@]} \
         $EXPERIMENTAL \
         -a com.google.android.apps.youtube.music.apk -o build/revanced-music-root.apk
@@ -127,7 +127,7 @@ echo "************************************"
 
 if [ -f "com.google.android.apps.youtube.music.apk" ]; then
     echo "Building Non-root APK"
-    java -jar revanced-cli.jar --rip-lib x86_64 --rip-lib x86 -b revanced-patches.jar \
+    java --rip-lib x86_64 --rip-lib x86 -jar revanced-cli.jar -b revanced-patches.jar \
         ${patches[@]} \
         $EXPERIMENTAL \
         -a com.google.android.apps.youtube.music.apk -o build/revanced-music.apk
@@ -144,7 +144,7 @@ echo "************************************"
 
 if [ -f "com.zhiliaoapp.musically.apk" ]; then
     echo "Building Non-root APK"
-    java -Xmx8192m -jar revanced-cli.jar --rip-lib x86_64 --rip-lib x86 -m revanced-integrations.apk -b revanced-patches.jar \
+    java --rip-lib x86_64 --rip-lib x86 -Xmx8192m -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar \
         ${patches[@]} \
         $EXPERIMENTAL \
         -a com.zhiliaoapp.musically.apk -o build/revanced-tiktok.apk
@@ -160,7 +160,7 @@ echo "************************************"
 
 if [ -f "tv.twitch.android.app.apk" ]; then
     echo "Building Non-root APK"
-    java -jar revanced-cli.jar --rip-lib x86_64 --rip-lib x86 -m revanced-integrations.apk -b revanced-patches.jar \
+    java --rip-lib x86_64 --rip-lib x86 -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar \
         ${patches[@]} \
         $EXPERIMENTAL \
         -a tv.twitch.android.app.apk -o build/revanced-twitch.apk
