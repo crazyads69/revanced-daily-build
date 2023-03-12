@@ -35,4 +35,4 @@ jobs:
           title: "Release ${{ env.date_now }}"
           files: |
             build/*.apk
-            microg.apk
+            vanced-microG.apk
