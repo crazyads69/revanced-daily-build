@@ -2,6 +2,4 @@
 hide-my-mix
 
 # INCLUDE PATCHES FROM BELOW. DO NOT REMOVE THIS LINE
-predictive-back-gesture
-remove-screenshot-restriction
 
