@@ -80,7 +80,7 @@ echo "Building YouTube Root APK"
 echo "************************************"
 
 if [ -f "com.google.android.youtube.apk" ]; then
-    java -jar revanced-cli.jar --rip-lib x86_64 --rip-lib x86 -m revanced-integrations.apk -b revanced-patches.jar --mount \
+    java -jar revanced-cli.jar --rip-lib x86_64 --rip-lib x86 --unsigned --rip-lib arm64-v8a --rip-lib armeabi-v7a -m revanced-integrations.apk -b revanced-patches.jar --mount \
         -e microg-support ${patches[@]} \
         $EXPERIMENTAL \
         -a com.google.android.youtube.apk -o build/revanced-youtube-root.apk
