@@ -32,6 +32,7 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest-experimental"
           draft: false
+          prerelease: true
           title: "Experimental ${{ env.date_now }}"
           files: |
             build/*.apk
