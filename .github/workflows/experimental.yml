@@ -16,13 +16,13 @@ jobs:
         uses: actions/setup-java@v3.9.0
         with:
           java-version: "17"
-          distribution: "zulu"
+          distribution: "temurin"
 
       - name: Download APKs from APKMirror
         run: ./download_apkmirror.sh
 
       - name: Build APKs, force patches on untested YouTube versions
-        run: ./build_revanced.sh experimental
+        run: ./build_revanced_experimental.sh
 
       - name: Set current date as env variable
         run: echo "date_now=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
