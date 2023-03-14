@@ -35,7 +35,7 @@ jobs:
           rm -rf build
       - name: Test Build Experimental APKS
         run: |
-          ./build_revanced_experimental.sh
+          ./build_revanced.sh experimental
           for filename in build/*.apk; do
             if [ -e "$filename" ]; then
               printf '"%s" exists\n' "$filename"
