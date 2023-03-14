@@ -17,7 +17,8 @@ jobs:
         with:
           java-version: "17"
           distribution: "temurin"
-
+          check-latest: true
+          
       - name: Download APKs from APKMirror
         run: ./download_apkmirror.sh
 
