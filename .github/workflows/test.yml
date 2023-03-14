@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-java@v3.9.0
         with:
           java-version: "17"
-          distribution: "zulu"
+          distribution: "temurin"
 
       - name: Download APKs from APKMirror
         run: ./download_apkmirror.sh
@@ -24,6 +24,18 @@ jobs:
       - name: Test Build APKs
         run: |
           ./build_revanced.sh
+          for filename in build/*.apk; do
+            if [ -e "$filename" ]; then
+              printf '"%s" exists\n' "$filename"
+            else
+              echo "APK build failed"
+              exit 1
+            fi
+          done
+          rm -rf build
+      - name: Test Build Experimental APKS
+        run: |
+          ./build_revanced_experimental.sh
           for filename in build/*.apk; do
             if [ -e "$filename" ]; then
               printf '"%s" exists\n' "$filename"
