@@ -63,7 +63,7 @@ for artifact in "${!artifacts[@]}"; do
     if [ ! -f "$artifact" ]; then
         echo "Downloading $artifact"
         # shellcheck disable=SC2086,SC2046
-        curl -sLO "$artifact" $(get_artifact_download_url ${artifacts[$artifact]})
+        curl -sLo "$artifact" $(get_artifact_download_url ${artifacts[$artifact]})
     fi
 done
 
