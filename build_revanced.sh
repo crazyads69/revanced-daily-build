@@ -99,6 +99,10 @@ if [ -f "com.google.android.youtube.apk" ]; then
         ${patches[@]} \
         $EXPERIMENTAL \
         -a com.google.android.youtube.apk -o build/revanced-youtube.apk
+    java -jar revanced-cli.jar --rip-lib x86_64 --rip-lib x86 --rip-lib armeabi-v7a -m revanced-integrations.apk -b revanced-patches.jar --keystore=ks.keystore \
+        ${patches[@]} \
+        $EXPERIMENTAL \
+        -a com.google.android.youtube.apk -o build/revanced-youtube_arm64-v8a.apk
 else
     echo "Cannot find YouTube APK, skipping build"
 fi
